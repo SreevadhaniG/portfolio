@@ -52,7 +52,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="mb-6 text-6xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-7xl md:text-8xl"
+          className="mb-6 text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl md:text-7xl lg:text-8xl"
         >
           Sreevadhani{" "}
           <span className="bg-gradient-to-r from-sky-500 via-fuchsia-500 to-orange-500 bg-clip-text text-transparent">
