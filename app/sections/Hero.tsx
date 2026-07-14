@@ -1,9 +1,9 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { ExternalLink, ChevronDown} from "lucide-react";
+import { ExternalLink, ChevronDown } from "lucide-react";
+import { githubUrl, linkedinUrl } from "@/app/config/socialLinks";
 
 export default function Hero() {
   
@@ -78,7 +78,7 @@ export default function Hero() {
           className="flex flex-wrap items-center justify-center gap-4"
         >
           <a
-            href="https://github.com"
+            href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2.5 rounded-full bg-slate-900 px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-slate-800 hover:shadow-lg hover:shadow-slate-900/20 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100"
@@ -87,7 +87,7 @@ export default function Hero() {
             GitHub
           </a>
           <a
-            href="https://linkedin.com"
+            href={linkedinUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2.5 rounded-full border-2 border-slate-200 px-7 py-3.5 text-sm font-semibold text-slate-700 transition-all hover:border-sky-300 hover:bg-sky-50 dark:border-slate-700 dark:text-slate-200 dark:hover:border-sky-700 dark:hover:bg-sky-900/20"

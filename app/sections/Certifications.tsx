@@ -2,7 +2,8 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { BadgeCheck, Shield, Award } from "lucide-react";
+import { Award, BadgeCheck, ExternalLink, Shield } from "lucide-react";
+import { javaCertificationUrl } from "@/app/config/certificationLinks";
 
 export default function Certifications() {
   const ref = useRef(null);
@@ -39,7 +40,13 @@ export default function Certifications() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative mx-auto max-w-2xl"
         >
-          <div className="group relative overflow-hidden rounded-3xl border border-primary-200 bg-white p-10 shadow-xl shadow-primary-100/50 transition-all hover:shadow-2xl dark:border-primary-800 dark:bg-slate-900/80 dark:shadow-primary-900/20">
+          <a
+            href={javaCertificationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Java SE 17 Developer Professional certification"
+            className="group relative block overflow-hidden rounded-3xl border border-primary-200 bg-white p-10 shadow-xl shadow-primary-100/50 transition-all hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-4 dark:border-primary-800 dark:bg-slate-900/80 dark:shadow-primary-900/20 dark:focus:ring-offset-slate-950"
+          >
             {/* Decorative corner */}
             <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-primary-400/10 blur-2xl transition-all group-hover:bg-primary-400/20" />
             <div className="absolute -left-20 -bottom-20 h-40 w-40 rounded-full bg-accent-400/10 blur-2xl transition-all group-hover:bg-accent-400/20" />
@@ -59,8 +66,9 @@ export default function Certifications() {
                   <Shield className="h-3 w-3" />
                   Oracle Certified
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-                  Java SE 17 Developer Professional
+                <h3 className="inline-flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
+                  <span>Java SE 17 Developer Professional</span>
+                  <ExternalLink className="h-5 w-5 text-primary-500 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </h3>
                 <p className="mt-2 text-slate-500 dark:text-slate-400">
                   Oracle Corporation
@@ -71,7 +79,7 @@ export default function Certifications() {
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </motion.div>
       </div>
     </section>

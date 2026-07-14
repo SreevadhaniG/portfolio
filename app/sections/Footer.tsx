@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { ExternalLink, Heart, Mail, MapPin } from "lucide-react";
+import { Heart, MapPin } from "lucide-react";
+import { githubUrl, linkedinUrl } from "@/app/config/socialLinks";
 
 export default function Footer() {
   return (
@@ -18,7 +19,7 @@ export default function Footer() {
         >
           <div>
             <h3 className="text-3xl font-bold text-slate-900 dark:text-white">
-              Let's Connect
+              Let&apos;s Connect
             </h3>
             <p className="mt-2 text-slate-500 dark:text-slate-400">
               Open to opportunities and collaborations
@@ -27,7 +28,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com"
+              href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex h-14 w-14 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 transition-all hover:border-slate-900 hover:bg-slate-900 hover:text-white hover:shadow-lg dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-white dark:hover:text-slate-900"
@@ -35,7 +36,7 @@ export default function Footer() {
               <FaGithub className="h-6 w-6 transition-transform group-hover:scale-110" />
             </a>
             <a
-              href="https://linkedin.com"
+              href={linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex h-14 w-14 items-center justify-center rounded-2xl border border-slate-200 bg-white text-[#0A66C2] transition-all hover:border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white hover:shadow-lg hover:shadow-[#0A66C2]/20 dark:border-slate-800 dark:bg-slate-900"
@@ -54,9 +55,6 @@ export default function Footer() {
           <div className="mt-8 border-t border-slate-200 pt-8 dark:border-slate-800">
             <p className="flex items-center justify-center gap-1.5 text-xs text-slate-400 dark:text-slate-500">
               Crafted with <Heart className="h-3 w-3 fill-red-400 text-red-400" /> by Sreevadhani G
-            </p>
-            <p className="mt-2 max-w-md text-xs text-slate-400 dark:text-slate-600">
-              I hereby declare that the above furnished information is true to the best of my knowledge.
             </p>
           </div>
         </motion.div>

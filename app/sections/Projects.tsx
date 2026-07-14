@@ -2,6 +2,10 @@
 
 import ScrollReveal from "@/components/ScrollReveal";
 import { ExternalLink, Layers, GitPullRequest } from "lucide-react";
+import {
+  jiraToPrRepoUrl,
+  printingPressRepoUrl,
+} from "@/app/config/projectLinks";
 
 const projects = [
   {
@@ -16,6 +20,7 @@ const projects = [
       "Integrated Firebase for authentication and data",
     ],
     icon: Layers,
+    repoUrl: printingPressRepoUrl,
   },
   {
     title: "Jira-to-PR Automation System",
@@ -35,6 +40,7 @@ const projects = [
       "Integrated Jira, GitHub, and AI services to streamline the software development workflow and reduce manual effort",
     ],
     icon: GitPullRequest,
+    repoUrl: jiraToPrRepoUrl,
   },
 ];
 
@@ -57,13 +63,20 @@ export default function Projects() {
         <div className="grid gap-8 md:grid-cols-2">
           {projects.map((project, index) => (
             <ScrollReveal key={project.title} delay={index * 0.15}>
-              <div className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-8 transition-all hover:shadow-xl dark:border-slate-800 dark:bg-slate-900/50 dark:hover:shadow-slate-900/50">
+              <a
+                href={project.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${project.title} GitHub repository`}
+                className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-4 dark:border-slate-800 dark:bg-slate-900/50 dark:hover:shadow-slate-900/50 dark:focus:ring-offset-slate-950"
+              >
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 dark:bg-primary-900/20">
                   <project.icon className="h-6 w-6 text-primary-600 dark:text-primary-400" />
                 </div>
 
-                <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-white">
-                  {project.title}
+                <h3 className="mb-2 inline-flex items-center gap-2 text-xl font-bold text-slate-900 dark:text-white">
+                  <span>{project.title}</span>
+                  <ExternalLink className="h-4 w-4 text-primary-500 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </h3>
 
                 <div className="mb-4 flex flex-wrap gap-2">
@@ -92,7 +105,7 @@ export default function Projects() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </a>
             </ScrollReveal>
           ))}
         </div>
